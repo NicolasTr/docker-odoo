@@ -1,0 +1,10 @@
+#!/bin/bash -ex
+
+echo "Starting openerp-server..."
+exec setuser openerp openerp-server \
+    --database=${DB_1_ENV_POSTGRESQL_DB} \
+    --db_user=${DB_1_ENV_POSTGRESQL_USER} \
+    --db_password=${DB_1_ENV_POSTGRESQL_PASS} \
+    --db_host=${DB_1_PORT_5432_TCP_ADDR} \
+    --db_port=${DB_1_PORT_5432_TCP_PORT} \
+    2>&1
