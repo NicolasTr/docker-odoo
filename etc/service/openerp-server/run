@@ -1,6 +1,10 @@
 #!/bin/bash -ex
 
 echo "Starting openerp-server..."
+
+# Wait for postgres
+sleep 30
+
 exec setuser openerp openerp-server \
     --database=${DB_1_ENV_POSTGRESQL_DB} \
     --db_user=${DB_1_ENV_POSTGRESQL_USER} \
